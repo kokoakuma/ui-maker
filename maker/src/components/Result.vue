@@ -1,12 +1,26 @@
 <template>
     <div class="root">
       <div class="resultContainer">
-        <button 
-      :style="styles">ボタン</button>
+        <button
+        :class="[{white: fontColorWhite},{fillColor: fill}]"
+        :style="styles">ボタン
+        </button>
       </div>
       <div class="cssCodeContainer">
           <div class="cssCode">
-              sample border-radius: 10px;
+              <p>border-style: solid</p>
+              <p>border-width: 1px</p>
+              <p>border-color: {{ color }};</p>
+              <p>border-radius: {{ shape }}px;</p>
+              <template v-if="fontColorWhite">
+                <p>color: white;</p>
+              </template>
+              <template v-if="!fontColorWhite">
+                <p>color: black;</p>
+              </template>
+              <template v-if="fill">
+                <p>background-color: {{ color }};</p>
+              </template>
           </div>
       </div>
     </div>
@@ -25,9 +39,13 @@ export default {
       dafault: "",
     },
     fill: {
-      type: String,
+      type: Boolean,
       dafault: "",
     },
+    fontColorWhite: {
+        type: Boolean,
+        default: false,
+    }
   },
   methods: {
     // バインドするスタイルを生成
@@ -63,11 +81,13 @@ export default {
 button{
     --shape: 10px;
     --color: black;
-    width: 70px;
+    width: 100px;
     height: 30px;
+    font-size: 15px;
     border: solid 1px #000;
     border-radius: var(--shape);
-    color: var(--color)
+    color: black;
+    border-color: var(--color);
 }
 
 .cssCodeContainer{
@@ -83,4 +103,7 @@ button{
     width: 95%;
     margin: auto;
 }
+
+.white{color: white;}
+.fillColor{background-color: var(--color);}
 </style>

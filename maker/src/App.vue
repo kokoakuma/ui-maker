@@ -9,6 +9,16 @@
         @square='square'
         @littleCurve='littleCurve'
         @curve='curve'
+        @black='black'
+        @red='red'
+        @green='green'
+        @blue='blue'
+        @yellow='yellow'
+        @navy='navy'
+        @fontBlack='fontBlack'
+        @fontWhite='fontWhite'
+        @doFill='doFill'
+        @notFill='notFill'
         />
       </div>
       <div>
@@ -16,6 +26,7 @@
         :shape='shape'
         :color='color'
         :fill='fill'
+        :fontColorWhite='fontColorWhite'
         />
       </div>
     </div>
@@ -39,18 +50,24 @@ export default {
     return {
     shape:"",
     color:"",
+    fill:false,
+    fontColorWhite:false,
     };
   },
   methods: {
-    square() {
-      this.shape = '0'
-    },
-    littleCurve() {
-      this.shape = '10'
-    },
-    curve() {
-      this.shape = '15'
-    }
+    square() { this.shape = '0' },
+    littleCurve() { this.shape = '10' },
+    curve() { this.shape = '15' },
+    black() { this.color = 'black'},
+    red() { this.color = '#e74c3c'},
+    green() { this.color = '#2ecc71'},
+    blue() { this.color = '#3498db'},
+    yellow() { this.color = '#f1c40f'},
+    navy() { this.color = '#2c3e50'},
+    fontBlack() { this.fontColorWhite = false},
+    fontWhite() { this.fontColorWhite = true},
+    doFill() { this.fill = true},
+    notFill() { this.fill = false},
     },
 }
 </script>
