@@ -8,6 +8,9 @@
       </div>
       <div class="cssCodeContainer">
           <div class="cssCode">
+              <p>width: 100px;</p>
+              <p>height: 30px;</p>
+              <p>font-size: 15px;</p>
               <p>border-style: solid</p>
               <p>border-width: 1px</p>
               <p>border-color: {{ color }};</p>
@@ -92,7 +95,6 @@ button{
 
 .cssCodeContainer{
     width: 100%;
-    height: 48%;
     border: solid 1px #000;
     border-radius: 10px;
     background-color: gray;

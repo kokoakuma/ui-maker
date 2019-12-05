@@ -39,7 +39,7 @@ export default {
 }
 .block{
     width: 90%;
-    margin-bottom: 45px;
+    margin-bottom: 15px;
     display: flex;
     justify-content: space-evenly
 }
@@ -57,7 +57,7 @@ button{
 }
 
 .color button{
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 .square{border-radius: 0px;}
